@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { DataTable } from 'primereact/datatable'
 import { Column } from 'primereact/column'
 import type { Artwork, ApiResponse } from './type'
@@ -74,8 +74,6 @@ function App() {
 
         const newSelected = new Set(selectedRowIds);
         const available = artworks.length;
-        const toSelectNow = Math.min(selectCount, available);
-
         // select rows on current page
         artworks.slice(0,selectCount).forEach(art => newSelected.add(art.id));
         setSelectedRowIds(newSelected);
